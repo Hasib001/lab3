@@ -22,31 +22,33 @@ Public Class Form1
     Private Sub enterButton_Click(sender As Object, e As EventArgs) Handles enterButton.Click
         ReDim employeeUnitsShipped(2, 6)
 
+        ''numeric validation
         validation = Int32.TryParse(inputTextBox.Text, employeeUnitsShipped(outterloop, innerloop))
 
-        '' If index < 6 Then
+        ''number validation
         If validation Then
 
             If employeeUnitsShipped(outterloop, innerloop) <= 5000 And employeeUnitsShipped(outterloop, innerloop) >= 0 Then
 
-
+                ''suamtion of array up to a certain ammount
                 runningTotal += employeeUnitsShipped(outterloop, innerloop)
 
-
+                ''condition to enter value as employee 1
                 If outterloop <= 0 And innerloop <= 6 Then
-
+                    ''showing the input
                     unitsShowTextBox.Text += employeeUnitsShipped(outterloop, innerloop).ToString + Environment.NewLine
                     innerloop += 1
                     index += 1
                     days.Text = (innerloop + 1).ToString
                     inputTextBox.Clear()
                     If index >= 7 Then
-                        averageE1 = runningTotal / 7
 
-                        averageE1Textbox.Text = "Average is: " + Math.Round(averageE1, 2).ToString
+                        averageE1 = runningTotal / 7 ''average calculation
+
+                        averageE1Textbox.Text = "Average is: " + Math.Round(averageE1, 2).ToString ''rounding value 
                         totalAverage += averageE1
-                        Label3.Font = New Font(Label3.Font, FontStyle.Regular)
-                        runningTotal = 0
+                        Label3.Font = New Font(Label3.Font, FontStyle.Regular) ''make the label bold
+                        runningTotal = 0 ''reset running total
                         outterloop += 1
                         innerloop = 0
                         index = 0 ''reset index
@@ -54,12 +56,13 @@ Public Class Form1
                         Label4.Font = New Font(Label4.Font, FontStyle.Bold)
                     End If
 
+                    ''taking input for second employee
                 ElseIf outterloop <= 1 And innerloop <= 6 Then
 
-                    unitsShowTextBox2.Text += employeeUnitsShipped(outterloop, innerloop).ToString + Environment.NewLine
+                    unitsShowTextBox2.Text += employeeUnitsShipped(outterloop, innerloop).ToString + Environment.NewLine ''showing input for second employee
                     innerloop += 1
                     index += 1
-                    days.Text = (innerloop + 1).ToString
+                    days.Text = (innerloop + 1).ToString ''showing days 
                     inputTextBox.Clear()
                     If index >= 7 Then
                         averageE2 = runningTotal / 7
@@ -74,19 +77,21 @@ Public Class Form1
                         Label5.Font = New Font(Label5.Font, FontStyle.Bold)
                     End If
 
+                    ''taking input for third employee 
                 ElseIf outterloop <= 2 And innerloop <= 6 Then
-                    unitsShowTextBox3.Text += employeeUnitsShipped(outterloop, innerloop).ToString + Environment.NewLine
+                    unitsShowTextBox3.Text += employeeUnitsShipped(outterloop, innerloop).ToString + Environment.NewLine ''showing units for third employee
+
                     innerloop += 1
                     index += 1
                     days.Text = (innerloop + 1).ToString
                     inputTextBox.Clear()
                     If index >= 7 Then
-                        averageE3 = runningTotal / 7
-                        averageE3Textbox.Text = "Average is: " + Math.Round(averageE3, 2).ToString
+                        averageE3 = runningTotal / 7 ''average calculation
+                        averageE3Textbox.Text = "Average is: " + Math.Round(averageE3, 2).ToString ''showing average
                         runningTotal = 0
                         Label1.Text = "Done"
                         days.Visible = False
-                        totalAverage = (averageE1 + averageE2 + averageE3) / 3
+                        totalAverage = (averageE1 + averageE2 + averageE3) / 3 ''average units per day calculation 
                         totalAverageTextBox.Text = "Average per day: " + Math.Round(totalAverage, 2).ToString
 
                         enterButton.Enabled = False
@@ -130,17 +135,21 @@ Public Class Form1
     Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
         Application.Exit()
     End Sub
-
+    ''' <summary>
+    ''' executes when user presses reset button
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub resetButton_Click(sender As Object, e As EventArgs) Handles resetButton.Click
         inputTextBox.ReadOnly = False
         Label1.Text = "Day"
         days.Visible = True
         enterButton.Enabled = True
 
-        unitsShowTextBox.Clear()
-        unitsShowTextBox2.Clear()
-        unitsShowTextBox3.Clear()
-        averageE1Textbox.Clear()
+        unitsShowTextBox.Clear()    ''clear textboxes
+        unitsShowTextBox2.Clear()   ''clear textboxes
+        unitsShowTextBox3.Clear()   ''clear textboxes
+        averageE1Textbox.Clear()    ''clear textboxes
         outterloop = 0
         innerloop = 0
         averageE1 = 0
@@ -153,9 +162,9 @@ Public Class Form1
         totalAverageTextBox.Clear()
         totalAverage = 0
         runningTotal = 0
-        Label4.Font = New Font(Label4.Font, FontStyle.Regular)
-        Label5.Font = New Font(Label5.Font, FontStyle.Regular)
-        Label3.Font = New Font(Label3.Font, FontStyle.Bold)
+        Label4.Font = New Font(Label4.Font, FontStyle.Regular) ''change font style
+        Label5.Font = New Font(Label5.Font, FontStyle.Regular) ''change font style
+        Label3.Font = New Font(Label3.Font, FontStyle.Bold)    ''change font style
         inputTextBox.Clear()
 
         ''
