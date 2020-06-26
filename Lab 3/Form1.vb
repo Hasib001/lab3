@@ -1,17 +1,23 @@
-﻿Option Strict On
+﻿''Name: S M hasibur Rahman
+''date: 25th June, 2020
+''description: The program will take input from user for a three employee as units shipped per day  and calculate individual average as well as compan average 
+''
+
+Option Strict On
 
 Public Class Form1
 
-    Dim employeeUnitsShipped(2, 6) As Integer
-    Dim index As Integer = 0
-    Dim runningTotal As Integer = 0
-    Dim averageE1 As Double
-    Dim averageE2 As Double
-    Dim averageE3 As Double
-    Dim totalAverage As Double
-    Dim outterloop As Integer = 0
-    Dim innerloop As Integer = 0
-    Dim validation As Boolean = True
+    ''variables
+    Dim employeeUnitsShipped(2, 6) As Integer ''2d array to keep the values
+    Dim index As Integer = 0 ''to calcualte average  for employees
+    Dim runningTotal As Integer = 0 ''used to calculate average
+    Dim averageE1 As Double ''store employee 1 average
+    Dim averageE2 As Double ''store employee 2 average
+    Dim averageE3 As Double '' store employee 3 average
+    Dim totalAverage As Double '' store average per day
+    Dim outterloop As Integer = 0 ''counter for array
+    Dim innerloop As Integer = 0 ''counter for array
+    Dim validation As Boolean = True ''for numeric validation
 
 
     ''' <summary>

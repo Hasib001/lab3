@@ -41,6 +41,7 @@ Partial Class Form1
         Me.errorToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.resetButton = New System.Windows.Forms.Button()
         Me.exitButton = New System.Windows.Forms.Button()
+        Me.hintToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -49,7 +50,7 @@ Partial Class Form1
         Me.Label1.Location = New System.Drawing.Point(13, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 17)
-        Me.Label1.TabIndex = 0
+        Me.Label1.TabIndex = 5
         Me.Label1.Text = "Day"
         '
         'Label2
@@ -66,7 +67,8 @@ Partial Class Form1
         Me.inputTextBox.Location = New System.Drawing.Point(66, 46)
         Me.inputTextBox.Name = "inputTextBox"
         Me.inputTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.inputTextBox.TabIndex = 2
+        Me.inputTextBox.TabIndex = 0
+        Me.hintToolTip.SetToolTip(Me.inputTextBox, "Provides units per day as employees")
         '
         'Label3
         '
@@ -86,6 +88,8 @@ Partial Class Form1
         Me.unitsShowTextBox.ReadOnly = True
         Me.unitsShowTextBox.Size = New System.Drawing.Size(125, 184)
         Me.unitsShowTextBox.TabIndex = 4
+        Me.unitsShowTextBox.TabStop = False
+        Me.hintToolTip.SetToolTip(Me.unitsShowTextBox, "User input show box ")
         '
         'days
         '
@@ -103,6 +107,8 @@ Partial Class Form1
         Me.averageE1Textbox.ReadOnly = True
         Me.averageE1Textbox.Size = New System.Drawing.Size(125, 22)
         Me.averageE1Textbox.TabIndex = 6
+        Me.averageE1Textbox.TabStop = False
+        Me.hintToolTip.SetToolTip(Me.averageE1Textbox, "Avearge as employee will show up here")
         '
         'totalAverageTextBox
         '
@@ -111,15 +117,18 @@ Partial Class Form1
         Me.totalAverageTextBox.ReadOnly = True
         Me.totalAverageTextBox.Size = New System.Drawing.Size(448, 22)
         Me.totalAverageTextBox.TabIndex = 7
+        Me.totalAverageTextBox.TabStop = False
         Me.totalAverageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.hintToolTip.SetToolTip(Me.totalAverageTextBox, "Average per day will show up here")
         '
         'enterButton
         '
         Me.enterButton.Location = New System.Drawing.Point(19, 382)
         Me.enterButton.Name = "enterButton"
         Me.enterButton.Size = New System.Drawing.Size(125, 33)
-        Me.enterButton.TabIndex = 8
-        Me.enterButton.Text = "Enter"
+        Me.enterButton.TabIndex = 1
+        Me.enterButton.Text = "&Enter"
+        Me.hintToolTip.SetToolTip(Me.enterButton, "Press ""enter"" or ""Alt+e"" to take user input")
         Me.enterButton.UseVisualStyleBackColor = True
         '
         'unitsShowTextBox2
@@ -130,6 +139,8 @@ Partial Class Form1
         Me.unitsShowTextBox2.ReadOnly = True
         Me.unitsShowTextBox2.Size = New System.Drawing.Size(131, 184)
         Me.unitsShowTextBox2.TabIndex = 9
+        Me.unitsShowTextBox2.TabStop = False
+        Me.hintToolTip.SetToolTip(Me.unitsShowTextBox2, "User input show box ")
         '
         'averageE2Textbox
         '
@@ -138,6 +149,8 @@ Partial Class Form1
         Me.averageE2Textbox.ReadOnly = True
         Me.averageE2Textbox.Size = New System.Drawing.Size(131, 22)
         Me.averageE2Textbox.TabIndex = 10
+        Me.averageE2Textbox.TabStop = False
+        Me.hintToolTip.SetToolTip(Me.averageE2Textbox, "Avearge as employee will show up here")
         '
         'unitsShowTextBox3
         '
@@ -147,6 +160,8 @@ Partial Class Form1
         Me.unitsShowTextBox3.ReadOnly = True
         Me.unitsShowTextBox3.Size = New System.Drawing.Size(129, 184)
         Me.unitsShowTextBox3.TabIndex = 11
+        Me.unitsShowTextBox3.TabStop = False
+        Me.hintToolTip.SetToolTip(Me.unitsShowTextBox3, "User input show box ")
         '
         'averageE3Textbox
         '
@@ -155,6 +170,8 @@ Partial Class Form1
         Me.averageE3Textbox.ReadOnly = True
         Me.averageE3Textbox.Size = New System.Drawing.Size(129, 22)
         Me.averageE3Textbox.TabIndex = 12
+        Me.averageE3Textbox.TabStop = False
+        Me.hintToolTip.SetToolTip(Me.averageE3Textbox, "Avearge as employee will show up here")
         '
         'Label4
         '
@@ -184,23 +201,31 @@ Partial Class Form1
         Me.resetButton.Name = "resetButton"
         Me.resetButton.Size = New System.Drawing.Size(125, 32)
         Me.resetButton.TabIndex = 15
-        Me.resetButton.Text = "Reset"
+        Me.resetButton.Text = "&Reset"
+        Me.hintToolTip.SetToolTip(Me.resetButton, "press ""alt+r"" or the button to reset the form")
         Me.resetButton.UseVisualStyleBackColor = True
         '
         'exitButton
         '
+        Me.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.exitButton.Location = New System.Drawing.Point(338, 382)
         Me.exitButton.Name = "exitButton"
         Me.exitButton.Size = New System.Drawing.Size(129, 31)
         Me.exitButton.TabIndex = 16
-        Me.exitButton.Text = "Exit"
+        Me.exitButton.Text = "E&xit"
+        Me.hintToolTip.SetToolTip(Me.exitButton, "press ""alt+x"" or the button to press exit")
         Me.exitButton.UseVisualStyleBackColor = True
+        '
+        'hintToolTip
+        '
+        Me.hintToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
         'Form1
         '
         Me.AcceptButton = Me.enterButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.resetButton
         Me.ClientSize = New System.Drawing.Size(497, 427)
         Me.Controls.Add(Me.exitButton)
         Me.Controls.Add(Me.resetButton)
@@ -219,7 +244,10 @@ Partial Class Form1
         Me.Controls.Add(Me.inputTextBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Average Units Shipped By Employee "
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -244,4 +272,5 @@ Partial Class Form1
     Friend WithEvents errorToolTip As ToolTip
     Friend WithEvents resetButton As Button
     Friend WithEvents exitButton As Button
+    Friend WithEvents hintToolTip As ToolTip
 End Class
